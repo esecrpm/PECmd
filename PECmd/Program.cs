@@ -208,9 +208,8 @@ internal class Program
         if (!RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
         {
             Console.WriteLine();
-            Log.Fatal("Non-Windows platforms not supported due to the need to load decompression specific Windows libraries! Exiting...");
+            Log.Information("Running on {OS}. Win10+ prefetch decompression uses managed LZXPRESS Huffman — no Windows libraries required.",RuntimeInformation.OSDescription);
             Console.WriteLine();
-            Environment.Exit(0);
             return;
         }
         
